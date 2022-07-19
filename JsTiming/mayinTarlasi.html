@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="start()">Start</button>
+    <div id="gameContent">
+
+    </div>
+</body>
+<script>
+
+    //Start a bastığında rastgele 100 adet button oluştur ve ekrana diz
+
+    //Her for da bir button oluşturup gameContent divine basacağız.
+
+    function start() {
+
+        var btnLeft = 0;
+        for (i = 0; i < 100; i++) {
+
+            btnLeft = btnLeft + 50;
+            var buttonElement = document.createElement('button');
+            buttonElement.style.width = '50px';
+            buttonElement.style.height = '50px';
+            buttonElement.style.position = 'absolute';
+            buttonElement.style.left = btnLeft + "px"
+
+            document.getElementById('gameContent').appendChild(buttonElement);
+
+        }
+
+
+    }
+
+
+
+
+
+
+//1- Butonları yanyana diz
+//Rastgele 10  mayınım olacak. Butan tıkladığında mayın varsa alert versin
+
+</script>
+
+</html>

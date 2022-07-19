@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 100px;
+            position: relative;
+        }
+    </style>
+</head>
+<body style="display: flex; background-color: green;">
+    
+
+    <img src="https://iasbh.tmgrup.com.tr/6a0363/1200/627/0/28/708/399?u=https://isbh.tmgrup.com.tr/sbh/2020/06/27/ruyada-at-gormek-nedir-ne-anlama-gelir-ruyada-beyaz-siyah-kahverengi-at-gormek-ruya-tabirleri-1593263179574.jpg" id="box">
+
+    <img src="https://www.kostumce.com/UserFiles/Fotograflar/org/5233-5260buyukjpg-5260buyuk.jpg"/>
+
+    <div style="width: 3px; height: 1200px; background-color: tomato;left: 800px; position: relative;">
+
+    </div>
+
+</body>
+<script>
+
+
+//Her 300 ms de bir herhangi bir at çizgiyi geçti mi diye kontrol etmem gerek.
+//Hangisi geçtiyse o atın ismini alert olarak ekrana vermem gerek.
+
+
+let leftTotal = 0;
+setInterval(() => {
+    
+    let randomNumber =  Math.floor(Math.random() * 100);
+
+    leftTotal = randomNumber + leftTotal;
+
+    document.getElementById('box').style.left = leftTotal + "px";
+
+
+
+
+// let images = document.getElementsByTagName('img');
+
+// for(i=0; i < images.length; i++){
+
+//     console.log(images[i].style.left);
+
+// }
+
+}, 300);
+
+
+
+</script>
+</html>

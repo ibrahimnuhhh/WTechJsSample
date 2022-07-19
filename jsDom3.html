@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="box" style="background-color: tomato; width: 200px; height: 200px;">
+    Eraaaay
+</div>
+
+    <button onclick="changeColor()">Change Color</button>
+</body>
+<script>
+
+function changeColor(){
+
+    document.getElementById("box").style.backgroundColor = "yellow"
+
+    var randomX = Math.floor(Math.random() * 1000);
+    var randomy = Math.floor(Math.random() * 1000);
+
+
+    document.getElementById("box").style.width = randomX + "px";
+    document.getElementById("box").style.height = randomy + "px";
+
+
+}
+
+</script>
+
+</html>

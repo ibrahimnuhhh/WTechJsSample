@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            left: 20px;
+            position: relative;
+            width: 200px;
+            height: 100px;
+            margin-top: 10px;
+        }
+
+        .finish {
+            left: 1300px;
+            top: 0px;
+            position: fixed;
+            width: 10px;
+            height: 1000px;
+            background-color: tomato;
+            color: white;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <audio id="myAudio">
+            <source src="easyBoy.mp3" type="audio/ogg">
+        </audio>
+        <button onclick="start()">Start</button>
+
+    </div>
+
+    <div>
+        <img
+            src="https://iasbh.tmgrup.com.tr/6a0363/1200/627/0/28/708/399?u=https://isbh.tmgrup.com.tr/sbh/2020/06/27/ruyada-at-gormek-nedir-ne-anlama-gelir-ruyada-beyaz-siyah-kahverengi-at-gormek-ruya-tabirleri-1593263179574.jpg" />
+    </div>
+
+    <div>
+        <img src="https://icdn.ensonhaber.com/resimler/diger/sutcu_beygiri_sampiyon_oldu.jpg" />
+
+    </div>
+    <div>
+        <img src="https://i4.hurimg.com/i/hurriyet/75/770x0/5be95b18b699de26b8f764d5.jpg" />
+
+    </div>
+
+
+
+    <div class="finish">FINISH</div>
+
+</body>
+<script>
+
+
+
+
+    function start() {
+
+        let finishLeft = 1300 - 200 ;
+        document.getElementById("myAudio").play();
+
+        let at1 = 20;
+        let at2 = 20;
+        let at3 = 20;
+
+       let startTimerInterval =  setInterval(startTimer, 200);
+
+
+        function startTimer(){
+
+            let randomNumber1 = Math.floor(Math.random() * 100);
+            let randomNumber2 = Math.floor(Math.random() * 100);
+            let randomNumber3 = Math.floor(Math.random() * 120);
+
+
+            at1 = at1 + randomNumber1;
+            at2 = at2 + randomNumber2;
+            at3 = at3 + randomNumber3;
+
+
+            document.getElementsByTagName('img')[0].style.left = at1 + "px";
+            document.getElementsByTagName('img')[1].style.left = at2 + "px";
+            document.getElementsByTagName('img')[2].style.left = at3 + "px";
+
+            if(at1 > finishLeft || at2 > finishLeft || at3 > finishLeft){
+
+                if(at1 > at2 && at1 > at3){
+                    console.log('İlk at kazandı...');
+                }
+                else if(at2 > at3){
+                    console.log('İkinci at kazandı...');
+                }
+                else{
+                    console.log('Üçüncü at kazandı..');
+                }
+
+                clearInterval(startTimerInterval);
+
+
+            }
+        }
+
+    }
+
+</script>
+
+</html>

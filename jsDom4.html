@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            font-size:60px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <label id="number1">0</label>
+        <label id="number2">0</label>
+        <label id="number3">0</label>
+        <label id="number4">0</label>
+        <label id="number5">0</label>
+        <label id="number6">0</label>
+    </div>
+    <div>
+        <button onclick="generate()">Generate</button>
+
+    </div>
+
+
+</body>
+<script>
+// 6 kez dönen bir for döngün (FOR) olsun. her döndüğünde random bir sayı üretsin. ve bu sayıyı bir diziye koysun. ama elbette aynı sayı olmayacak?
+function generate(){
+    
+   var randomArray = [];
+
+
+   for(i =0; i < 6; i++){
+    var randomNumber = Math.floor(Math.random() * 49);
+
+    if(randomArray.includes(randomNumber)){
+        i--;
+    }
+    else{
+        randomArray[i] = randomNumber
+    }
+
+   }
+
+   
+
+   document.getElementById("number1").innerHTML = randomArray[1];
+   document.getElementById("number2").innerHTML = randomArray[2];
+   document.getElementById("number3").innerHTML = randomArray[3];
+   document.getElementById("number4").innerHTML = randomArray[4];
+   document.getElementById("number5").innerHTML = randomArray[5];
+   document.getElementById("number6").innerHTML = randomArray[0];
+
+
+
+
+}
+
+</script>
+</html>

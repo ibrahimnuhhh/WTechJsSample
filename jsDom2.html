@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="text" id="price" />
+    <button onclick="calc()">KDV Calc</button>
+
+
+    <hr>
+    <div>
+        <label>Number-1</label>
+        <input type="text" id="number1"/>
+    </div>
+    <div>
+        <label>Number-2</label>
+        <input type="text" id="number2"/>
+    </div>
+    <div>
+        <button onclick="topla()">Topla</button>
+    </div>
+
+</body>
+<script>
+
+//Butona tıklandığında inputtaki price ın KDV li halini ekrana yazdırır
+function calc(){
+
+    var unitPrice =  document.getElementById("price").value;
+
+    var kdvPrice = unitPrice * 1.18;
+
+    console.log(kdvPrice.toFixed(2));
+}
+
+
+//Butona basıldığında iki sayıyı topla ekrana yaz
+function topla(){
+    var x = document.getElementById("number1").value;
+    var y = document.getElementById("number2").value;
+
+    var z = Number(x) + Number(y);
+
+    console.log("Sonuç: ", z);
+
+}
+
+
+
+</script>
+</html>

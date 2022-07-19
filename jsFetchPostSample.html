@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <div>
+            <label>Name:</label>
+            <input type="text" id="name"/>
+        </div>
+        <div>
+            <label>Description:</label>
+            <input type="text" id="description"/>
+        </div>
+    </div>
+
+    <button onclick="postData()">Post Data</button>
+
+</body>
+<script>
+
+
+
+
+    function postData() {
+
+
+        var newCategory = {
+            name: document.getElementById("name").value,
+            description: document.getElementById("description").value,
+        }
+
+        var requestOptions = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newCategory)
+        }
+
+
+        fetch("https://northwind.vercel.app/api/categories", requestOptions)
+            .then(res => res.json())
+            .then((data) => {
+          
+                alert("İşlem başarılı!!")
+                
+            })
+
+    }
+
+
+</script>
+
+</html>

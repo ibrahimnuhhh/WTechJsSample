@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="productId"/>
+    <button onclick="deleteProduct()">Delete</button>
+    
+</body>
+
+
+<script>
+
+function deleteProduct(){
+
+    let productId = document.getElementById("productId").value;
+
+
+    var requestOptions = {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }
+
+
+        fetch("https://northwind.vercel.app/api/products/" + productId, requestOptions)
+            .then(res => res.json())
+            .then((data) => {
+          
+                alert("Silem işlemi başarılı!!")
+                
+            })
+
+}
+
+</script>
+</html>

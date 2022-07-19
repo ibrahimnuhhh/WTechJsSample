@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    //https://northwind.vercel.app/api/products
+
+    // fetch("https://northwind.vercel.app/api/products")
+    // .then((res) => res.json())
+    // .then((data) => {
+
+    // //ürün adedi
+    // //data.length
+
+
+    // //CategoryId si 7 olan ÜRÜNLERİ ver (where - list)
+    // var newProducts = data.filter(q => q.categoryId == 7);
+
+    // //Product Id si 10 olan ÜRÜNÜ bana ver (FirstOrDefault)
+    // var product = data.find(q => q.id == 10);
+
+
+
+    // //UnitPrice kolonunu baz alarak en pahalı ürünü ver
+    // //UnitPrice kolonunu baz alarak en ucuz ürünü ver
+    // //UnitPrice 20 den büyük olan ürünleri bana ver ( filter)
+    // //UnitPrice 20 den büyük kaç tane ürün var?
+
+
+
+    // })
+
+
+
+    fetch("https://northwind.vercel.app/api/suppliers")
+        .then((res) => res.json())
+        .then((data) => {
+
+            //Country si UK olan kaç supplier var.
+
+            // let counter = 0;
+            // data.forEach(item => {
+
+            //     if(item.address?.country == 'UK'){
+            //         counter++;
+            //     }
+            // });
+
+            // console.log('Country UK :', counter);
+
+
+            //CompanyName A harfi ile başlayan kaç Supplier var.
+            // var supplierCount = data.filter(q => q.companyName.startsWith('E')).length;
+            // console.log('Supplier Count (Starts with E) ', supplierCount);
+
+            //Contact Name Niels geçen kaç Supplier var.
+            // var supplierCount = data.filter(q => q.contactName.includes('Niels')).length;
+            // console.log('Supplier Count (Includes Niels) ', supplierCount);
+
+
+            //PhoneNumber alanındaki tüm () leri / ile değiştir
+            data.forEach(item => {
+
+                if (item.address != undefined) {
+                    var newPhone = item.address?.phone.replaceAll('(', '/')
+                    var newPhone2 = newPhone.replaceAll(')', '/')
+                    console.log(newPhone2);
+                }
+
+            });
+
+
+        })
+
+
+        //https://northwind.vercel.app/api/orders
+
+        //Country USA olan kaç siparişim var?
+        //freight 20 den büyük olan kaç siparişim var?
+        //shipName alanında Great ile başlayan siparişlerimi console yazdır?
+        //employeeId 4 olan kaç adet siparişim var?
+        
+
+        //Artistler için - Kıvanç / Hayri
+        //  Console a her siparişin toplam tutarını yaz!. Tek tek siparişlerde dön her siparişin detaylarında dön ve toplam tutarı hesapla. ****
+        // 10248 / 442.00
+        // 10249 / 500 
+        //En yüksek sipariş bedeli nedir ve hangi orderId ye aittir.
+
+
+
+</script>
+
+</html>
